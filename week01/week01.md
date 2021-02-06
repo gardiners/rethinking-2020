@@ -6,7 +6,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(rethinking)
-library(DiagrammeR)
 ```
 
 # Question 1
@@ -140,9 +139,10 @@ dens_plot +
             alpha = 1/2)
 ```
 
-![](week01_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> … and the
-HDPI interval, which is really pretty similar. Could be due to our
-quantisation?
+![](week01_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+… and the HDPI interval, which is really pretty similar. Could be due to
+our quantisation?
 
 ``` r
 int_hpd <- HPDI(post_sample, 0.89)
