@@ -2,7 +2,7 @@ Week 1
 ================
 
 ``` r
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, dev = "svg")
 
 library(tidyverse)
 library(rethinking)
@@ -40,7 +40,7 @@ tibble(p = p_grid,
   geom_line()
 ```
 
-![](week01_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](week01_files/figure-gfm/unnamed-chunk-2-1.svg)<!-- -->
 
 # Question 2
 
@@ -69,7 +69,7 @@ tibble(p = p_grid,
   geom_line()
 ```
 
-![](week01_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](week01_files/figure-gfm/unnamed-chunk-4-1.svg)<!-- -->
 
 # Question 3
 
@@ -97,7 +97,7 @@ samples %>%
   geom_jitter(alpha = 1/2)
 ```
 
-![](week01_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](week01_files/figure-gfm/unnamed-chunk-6-1.svg)<!-- -->
 
 There is some quantisation because our grid approximation only has 100
 points - and half of them won’t produce any samples due to our prior.
@@ -112,7 +112,7 @@ dens_plot <- samples %>%
 dens_plot
 ```
 
-![](week01_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](week01_files/figure-gfm/unnamed-chunk-7-1.svg)<!-- -->
 
 The 89th percentile interval:
 
@@ -122,7 +122,7 @@ int_89
 ```
 
     ##        5%       94% 
-    ## 0.5050505 0.6363636
+    ## 0.5050505 0.6161616
 
 Plotted:
 
@@ -139,7 +139,7 @@ dens_plot +
             alpha = 1/2)
 ```
 
-![](week01_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](week01_files/figure-gfm/unnamed-chunk-9-1.svg)<!-- -->
 
 … and the HDPI interval, which is really pretty similar. Could be due to
 our quantisation?
@@ -150,7 +150,7 @@ int_hpd
 ```
 
     ##     |0.89     0.89| 
-    ## 0.5050505 0.6060606
+    ## 0.5050505 0.5959596
 
 Plotted:
 
@@ -163,4 +163,4 @@ dens_plot +
             alpha = 1/2)
 ```
 
-![](week01_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](week01_files/figure-gfm/unnamed-chunk-11-1.svg)<!-- -->

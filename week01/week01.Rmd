@@ -4,7 +4,7 @@ output: github_document
 ---
 
 ```{r setup, message = FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, dev = "svg")
 
 library(tidyverse)
 library(rethinking)
